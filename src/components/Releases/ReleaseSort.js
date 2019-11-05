@@ -30,9 +30,27 @@ class ReleaseSort extends React.Component {
 		sortType: null
 	}
 
+	// On select change, update local state with value of selected field, then send up to parent container functions
+	onSelectChange = (event, data) => {
+		this.setState(
+			{
+				sortType: data.value
+			},
+			() => {
+				this.props.onSortChange(this.state.sortType)
+			}
+		)
+	}
+
 	render() {
 		return (
-			<Dropdown placeholder="Sort by" fluid selection options={sortOptions} />
+			<Dropdown
+				onChange={this.onSelectChange}
+				placeholder="Sort by"
+				fluid
+				selection
+				options={sortOptions}
+			/>
 		)
 	}
 }

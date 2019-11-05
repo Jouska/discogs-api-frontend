@@ -153,6 +153,26 @@ class App extends React.Component {
 	// 	this.onReleaseSubmit("34278", "sort=title&sort_order=asc")
 	// }
 
+	// Grabbing sort type selected from ArtistSort component, setting it to state, then re-call ArtistRelease Submit with new data
+	// BUT ONLY if an artist has already been selected!
+	onSortChange = sortType => {
+		console.log(sortType)
+		this.setState(
+			{
+				sortType
+			},
+			() => {
+				// Ensure an artist has been selected to allow sort
+				if (this.state.selectedArtist) {
+					this.onReleaseSubmit(
+						this.state.selectedArtist.id,
+						this.state.sortType
+					)
+				}
+			}
+		)
+	}
+
 	render() {
 		return (
 			<Container>
@@ -176,6 +196,7 @@ class App extends React.Component {
 							<ReleaseListContainer
 								releases={this.state.releases}
 								releasesAreLoading={this.state.releasesAreLoading}
+								onSortChange={this.onSortChange}
 							/>
 						</Grid.Row>
 					</Grid>

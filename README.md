@@ -2,7 +2,7 @@
 
 This application has been developed to interact with the Discogs API; allowing a user to search for an artist, view their releases and sort them.
 
-This is an incomplete version, created in a two hour window. Currently this version lacks:
+This is a version that has been updated outside of the 2 hour test window, and now includes these feature:
 
 Display of loaders in UI during API fetch
 
