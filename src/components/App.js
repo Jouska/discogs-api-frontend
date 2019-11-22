@@ -176,7 +176,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<Container>
-				<Header as="h1">Tom Halliwell / Pirate Studios / Front end test</Header>
+				<Header as="h1">Tom Halliwell / Discogs API / Front end test</Header>
 				<p style={{ fontSize: "1.6em" }}>
 					Welcome to the Discogs API artist search prototype!
 					<br />
